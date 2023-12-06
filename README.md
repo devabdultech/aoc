@@ -8,6 +8,9 @@ Solutions to the Advent of Code challenges. This repository contains my solution
   - [Day 1: Trebuchet?!](./2023/day_01)
   - [Day 2: Cube Conundrum](./2023/day_02)
   - [Day 3: Gear Ratios](./2023/day_03)
+  - [Day 4: Scratchcards](./2023/day_04)
+  - [Day 5: If You Give A Seed A Fertilizer](./2023/day_05)
+  - [Day 6: Wait For It](./2023/day_06)
 
 ## Project Structure
 
