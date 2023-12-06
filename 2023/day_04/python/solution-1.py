@@ -3,7 +3,7 @@ import re
 points = 0
 
 with open("./input.txt") as f:
-    lines = [x.strip() for x in f.readlines()]
+    lines = f.read().strip().split("\n")
 
     for line in lines:
         (leftNums, rightNums) = line.split("|")
