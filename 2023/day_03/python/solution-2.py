@@ -1,11 +1,13 @@
-set = set()
+total = []
 with open('./input.txt') as f:
     lines = [x.strip() for x in f.readlines()]
 
     for row, line in enumerate(lines):
         for col, char in enumerate(line):
-            if char.isdigit() or char == ".":
+            if char != "*":
                 continue
+
+            s = set()
 
             for x in [row - 1, row, row + 1]:
                 for y in [col - 1, col, col + 1]:
@@ -13,15 +15,20 @@ with open('./input.txt') as f:
                         continue
                     while y > 0 and lines[x][y - 1].isdigit():
                         y -= 1
-                    set.add((x, y))
+                    s.add((x, y))
 
-nums = []
+            if len(s) != 2:
+                continue
 
-for x, y in set:
-    a = ""
-    while y < len(lines[x]) and lines[x][y].isdigit():
-        a += lines[x][y]
-        y += 1
-    nums.append(int(a))
+            nums = []
 
-print(sum(nums))
+            for x, y in s:
+                a = ""
+                while y < len(lines[x]) and lines[x][y].isdigit():
+                    a += lines[x][y]
+                    y += 1
+                nums.append(int(a))
+
+            total.append(nums[0] * nums[1])
+
+print(sum(total))
